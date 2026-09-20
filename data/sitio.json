@@ -1,0 +1,120 @@
+{
+  "sitio": {
+    "idioma": "es",
+    "autor": "microtools",
+    "pais": "Perú",
+    "metaTitulo": "microtools — Herramientas web gratuitas que funcionan en tu navegador",
+    "metaDescripcion": "Herramientas gratuitas y sin registro: generador de códigos QR con descarga en 3D, calculadora de liquidación y más. Todo se calcula en tu navegador.",
+    "h1": "Herramientas que hacen una cosa y la hacen entera",
+    "entrada": [
+      "microtools es un conjunto de herramientas web pequeñas. Cada una resuelve un problema concreto —generar un código QR, calcular una liquidación— y lo resuelve completo, sin pedirte una cuenta, sin marcas de agua y sin guardar nada de lo que escribes.",
+      "Todas funcionan igual por dentro: el cálculo ocurre en tu navegador. No hay servidor que reciba tus datos porque no hay servidor."
+    ]
+  },
+  "herramientas": [
+    {
+      "nombre": "Generador de códigos QR con descarga 3D",
+      "url": "https://qr.microtools.lat/",
+      "estado": "disponible",
+      "resumen": "Códigos QR para enlaces, WiFi, WhatsApp, tarjetas de contacto y pagos. Con estilos, logo y colores, y con algo que no encontrarás en otros generadores: la descarga del código como pieza 3D lista para imprimir.",
+      "puntos": [
+        "PNG, JPG y SVG en cualquier tamaño, sin marca de agua",
+        "Exportación a 3MF a dos colores, STL y OpenSCAD paramétrico",
+        "Siete objetos: placa, llavero, imán, tarjeta, posavasos, placa de pared y cubo",
+        "Comprueba que el código escanea antes de que gastes filamento",
+        "Lectura de códigos desde imagen o cámara, y generación por lotes desde un CSV"
+      ],
+      "icono": "qr"
+    },
+    {
+      "nombre": "Calculadora de liquidación laboral (Perú)",
+      "url": "https://liquidacion.microtools.lat/",
+      "estado": "disponible",
+      "resumen": "CTS trunca, gratificación trunca, vacaciones truncas y no gozadas e indemnización por despido arbitrario, con el desglose de cada concepto y la norma que lo sustenta.",
+      "puntos": [
+        "Desglose concepto por concepto, no solo el total",
+        "Memoria de cálculo paso a paso, para comparar con la hoja de la empresa",
+        "Dice con qué valores legales calculó: RMV, asignación familiar, bonificaciones",
+        "Descarga del resultado en PDF, generado en tu propio navegador"
+      ],
+      "icono": "calculadora"
+    }
+  ],
+  "secciones": [
+    {
+      "h2": "Por qué el cálculo ocurre en tu navegador",
+      "parrafos": [
+        "Casi todas las herramientas web equivalentes envían lo que escribes a un servidor, hacen el trabajo allí y te devuelven el resultado. Es la forma más cómoda de programarlas y la peor para quien las usa: la contraseña del WiFi de tu casa, el sueldo de un trabajador o el enlace privado de un cliente pasan por una máquina que no controlas y que puede registrarlos.",
+        "Aquí no pasa. El código de cada herramienta se descarga una vez y se ejecuta dentro de tu navegador, igual que una hoja de cálculo se ejecuta dentro de Excel. Puedes comprobarlo de la forma más simple que existe: abre la herramienta, desconecta internet y sigue usándola. Si funciona sin conexión, es que nada estaba saliendo de tu equipo.",
+        "Esto tiene una consecuencia incómoda que conviene decir en voz alta: como no guardamos nada, tampoco podemos recuperar nada. Si cierras la pestaña sin descargar tu resultado, se perdió."
+      ]
+    },
+    {
+      "h2": "Lo que no vas a encontrar aquí",
+      "parrafos": [
+        "Sin registro ni correo electrónico. Ninguna herramienta pide una cuenta, porque ninguna necesita saber quién eres para hacer su trabajo.",
+        "Sin marca de agua y sin límite de descargas. El archivo que bajas es el archivo final, en el tamaño que pediste, y puedes usarlo comercialmente sin atribución.",
+        "Sin versión de pago que desbloquea lo que ya funcionaba. Estas herramientas se sostienen con la publicidad de la página, no cobrando por quitar un obstáculo puesto a propósito.",
+        "Sin códigos QR que caducan. Un QR generado aquí apunta directamente a tu enlace. No pasa por un redireccionador nuestro, así que no puede dejar de funcionar porque nosotros dejemos de existir: eso es exactamente lo que ocurre con los generadores que ofrecen QR \"dinámicos\" gratis."
+      ]
+    },
+    {
+      "h2": "Cómo se decide qué herramienta se construye",
+      "parrafos": [
+        "Tres condiciones. La primera, que el problema sea concreto y tenga una respuesta verificable: un código QR escanea o no escanea, una liquidación cuadra o no cuadra con la norma. Las herramientas que dan resultados discutibles se prestan a parecer útiles sin serlo.",
+        "La segunda, que el cálculo se pueda hacer entero en el navegador. Esto descarta cosas legítimas —convertir vídeo, consultar un registro público— y es un límite que se acepta a cambio de no pedirle a nadie que confíe en un servidor.",
+        "La tercera, que ya exista un camino razonable para llegar al resultado y sea más lento de lo que debería. Si hoy alguien resuelve algo con tres pestañas abiertas, una plantilla descargada y una calculadora, ahí hay una herramienta que vale la pena."
+      ]
+    },
+    {
+      "h2": "Cómo se financia el sitio",
+      "parrafos": [
+        "Con publicidad display. Es la razón por la que las herramientas son gratuitas y no tienen versión de pago, y también la razón por la que verás bloques de anuncios marcados como tal en las páginas.",
+        "Los anuncios los sirve Google y se cargan después de que la herramienta ya es utilizable, con su espacio reservado de antemano para que no desplacen el contenido mientras lees. No hay anuncios superpuestos al área de trabajo, ni ventanas que se abren solas, ni pasos partidos en varias páginas para multiplicar las visitas."
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "¿Las herramientas son gratis de verdad?",
+      "Sí, y no hay versión de pago. El sitio se financia con los anuncios de la página. No hay funciones bloqueadas, límites de uso ni marcas de agua que se quiten pagando."
+    ],
+    [
+      "¿Puedo usar los resultados con fines comerciales?",
+      "Sí. Las imágenes, los archivos 3D y los cálculos que generes son tuyos, sin atribución y sin límite de cantidad."
+    ],
+    [
+      "¿Qué datos se guardan de lo que escribo?",
+      "Ninguno llega a nosotros: el procesamiento ocurre en tu navegador. Algunas herramientas guardan un historial en el almacenamiento local de tu propio navegador, que puedes borrar desde la herramienta o limpiando los datos del sitio."
+    ],
+    [
+      "¿Por qué cada herramienta está en un subdominio distinto?",
+      "Porque cada una es un programa independiente. Así una no puede romper a otra al actualizarse, y cada una carga solo su propio código en lugar de arrastrar el de todas."
+    ],
+    [
+      "¿Funcionan en el móvil?",
+      "Sí, incluidas las de mayor carga de cálculo. La vista previa 3D del generador de QR necesita un navegador con WebGL, que traen todos los móviles de los últimos años."
+    ],
+    [
+      "¿Quién está detrás de microtools?",
+      "Un ingeniero industrial en Lima que construye estas herramientas porque las necesitaba primero. Los datos del titular están en el aviso legal."
+    ]
+  ],
+  "legales": [
+    {
+      "ruta": "/legal/aviso-legal/",
+      "archivo": "legal/aviso-legal/index.html",
+      "titulo": "Aviso legal"
+    },
+    {
+      "ruta": "/legal/privacidad/",
+      "archivo": "legal/privacidad/index.html",
+      "titulo": "Política de privacidad"
+    },
+    {
+      "ruta": "/legal/cookies/",
+      "archivo": "legal/cookies/index.html",
+      "titulo": "Política de cookies"
+    }
+  ]
+}
