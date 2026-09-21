@@ -1,3 +1,1 @@
-# Pendiente: al tener el ID de editor de AdSense, se genera aquí la línea
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-# ejecutando: node build/generar.mjs
+google.com, pub-4794558545797945, DIRECT, f08c47fec0942fa0

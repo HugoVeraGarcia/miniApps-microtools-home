@@ -21,6 +21,18 @@ const DOMINIO = leerConfig('dominio').replace(/\/$/, '');
 const MARCA = leerConfig('marca') || datos.sitio.autor;
 const CLIENTE = leerConfig('cliente');
 
+/* El ID de editor de AdSense va en el HTML generado, NO inyectado por
+   JavaScript. El robot que verifica el sitio lee el HTML tal como llega del
+   servidor: un script añadido en el evento load no lo ve, y la verificación
+   falla aunque los anuncios funcionen. La meta es el método de verificación
+   que documenta Google; el script es la carga real. */
+function etiquetasAdSense() {
+  if (!CLIENTE) return '';
+  return `<meta name="google-adsense-account" content="${CLIENTE}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${CLIENTE}" crossorigin="anonymous"></script>`;
+}
+
+
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const abs = (ruta) => (DOMINIO ? DOMINIO + ruta : ruta);
 const avisos = [];
@@ -182,6 +194,7 @@ ${DOMINIO ? `<meta property="og:url" content="${abs('/')}">` : ''}
 <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
 <link rel="stylesheet" href="/css/home.css">
 ${datosEstructurados()}
+${etiquetasAdSense()}
 </head>
 <body>
 <a class="salto-contenido" href="#contenido">Ir al contenido</a>
@@ -291,6 +304,7 @@ function paginaLegal(l) {
 ${DOMINIO ? `<link rel="canonical" href="${abs(l.ruta)}">` : ''}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/home.css">
+${etiquetasAdSense()}
 </head>
 <body>
 <a class="salto-contenido" href="#contenido">Ir al contenido</a>
