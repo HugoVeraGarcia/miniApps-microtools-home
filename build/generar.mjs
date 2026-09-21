@@ -288,7 +288,6 @@ function paginaLegal(l) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(l.titulo)} — ${esc(MARCA)}</title>
 <meta name="description" content="${esc(l.titulo)} de ${esc(MARCA)}.">
-<meta name="robots" content="noindex, follow">
 ${DOMINIO ? `<link rel="canonical" href="${abs(l.ruta)}">` : ''}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/home.css">
@@ -314,14 +313,25 @@ ${pie()}
 
 function sitemap() {
   const hoy = new Date().toISOString().slice(0, 10);
+  const entrada = (ruta, prioridad, frecuencia) => `  <url>
+    <loc>${abs(ruta)}</loc>
+    <lastmod>${hoy}</lastmod>
+    <changefreq>${frecuencia}</changefreq>
+    <priority>${prioridad}</priority>
+  </url>`;
+
+  // Las legales entran en el sitemap aunque nadie las busque. Quien revisa el
+  // sitio —AdSense sobre todo— espera encontrar la politica de privacidad
+  // indexada, no solo enlazada en el pie. Prioridad baja y cambio anual, que
+  // es lo que de verdad son.
+  const urls = [
+    entrada('/', '1.0', 'monthly'),
+    ...datos.legales.map((l) => entrada(l.ruta, '0.3', 'yearly')),
+  ].join('\n');
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${abs('/')}</loc>
-    <lastmod>${hoy}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+${urls}
 </urlset>
 `;
 }
