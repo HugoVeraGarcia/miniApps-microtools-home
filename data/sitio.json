@@ -4,7 +4,7 @@
     "autor": "microtools",
     "pais": "Perú",
     "metaTitulo": "microtools — Herramientas web gratuitas que funcionan en tu navegador",
-    "metaDescripcion": "Herramientas gratuitas y sin registro: generador de códigos QR con descarga en 3D, calculadora de liquidación y más. Todo se calcula en tu navegador.",
+    "metaDescripcion": "Herramientas gratuitas y sin registro: generador de códigos QR con descarga en 3D, calculadora de liquidación, conversor de tallas de zapatillas y más. Todo se calcula en tu navegador.",
     "h1": "Herramientas que hacen una cosa y la hacen entera",
     "entrada": [
       "microtools es un conjunto de herramientas web pequeñas. Cada una resuelve un problema concreto —generar un código QR, calcular una liquidación— y lo resuelve completo, sin pedirte una cuenta, sin marcas de agua y sin guardar nada de lo que escribes.",
@@ -38,6 +38,19 @@
         "Descarga del resultado en PDF, generado en tu propio navegador"
       ],
       "icono": "calculadora"
+    },
+    {
+      "nombre": "Conversor de tallas de zapatillas US a Chile, Perú y Colombia",
+      "url": "https://tallas.microtools.lat/",
+      "estado": "disponible",
+      "resumen": "Convierte tallas de calzado de Estados Unidos a la talla chilena, peruana y colombiana, en hombre y en mujer, con el largo de pie en centímetros y la tabla de cada marca.",
+      "puntos": [
+        "Equivalencia de hombre y de mujer en la misma página, en tres países",
+        "Tabla de Nike, Adidas, New Balance y Puma, talla por talla",
+        "Conversor visual con el largo del pie a escala real",
+        "Cálculo de tu talla a partir del largo de tu pie"
+      ],
+      "icono": "zapato"
     }
   ],
   "secciones": [
