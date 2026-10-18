@@ -14,12 +14,16 @@ import { fileURLToPath } from 'node:url';
 
 const RAIZ = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const datos = JSON.parse(readFileSync(join(RAIZ, 'data', 'sitio.json'), 'utf8'));
+const { guias } = JSON.parse(readFileSync(join(RAIZ, 'data', 'guias.json'), 'utf8'));
 
 const configJs = readFileSync(join(RAIZ, 'js', 'config.js'), 'utf8');
 const leerConfig = (clave) => (configJs.match(new RegExp(`${clave}:\\s*'([^']*)'`)) || [])[1] || '';
 const DOMINIO = leerConfig('dominio').replace(/\/$/, '');
 const MARCA = leerConfig('marca') || datos.sitio.autor;
 const CLIENTE = leerConfig('cliente');
+const CORREO = leerConfig('correo');
+const HOY = new Date().toISOString().slice(0, 10);
+const FECHA_LARGA = new Date().toLocaleDateString('es-PE', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Lima' });
 
 /* El ID de editor de AdSense va en el HTML generado, NO inyectado por
    JavaScript. El robot que verifica el sitio lee el HTML tal como llega del
@@ -67,13 +71,15 @@ function icono(nombre, tam = 22) {
 
 const NAV = [
   ['/', 'Inicio'],
-  ['https://qr.microtools.lat/', 'Generador de QR'],
+  ['/guias/', 'Guías'],
+  ['/sobre-nosotros/', 'Sobre nosotros'],
+  ['/contacto/', 'Contacto'],
 ];
 
 function cabecera(rutaActual) {
   const enlaces = NAV.map(([r, t]) => {
     const externo = r.startsWith('http');
-    const actual = !externo && r === rutaActual ? ' aria-current="page"' : '';
+    const actual = !externo && (r === rutaActual || (r !== '/' && rutaActual.startsWith(r))) ? ' aria-current="page"' : '';
     return `<a href="${r}"${actual}${externo ? ' rel="noopener"' : ''}>${esc(t)}</a>`;
   }).join('\n    ');
 
@@ -88,6 +94,9 @@ function cabecera(rutaActual) {
 function pie() {
   return `<footer class="pie"><div class="contenedor">
   <div class="pie__enlaces">
+    <a href="/guias/">Gu&iacute;as</a>
+    <a href="/sobre-nosotros/">Sobre nosotros</a>
+    <a href="/contacto/">Contacto</a>
     ${datos.legales.map((l) => `<a href="${l.ruta}">${esc(l.titulo)}</a>`).join('\n    ')}
   </div>
   <p>Todas las herramientas se ejecutan en tu navegador. Nada de lo que escribes se env&iacute;a a ning&uacute;n servidor.</p>
@@ -224,6 +233,13 @@ ${datos.secciones.map((sec) => `    <h2>${esc(sec.h2)}</h2>\n`
     + sec.parrafos.map((p) => `    <p>${esc(p)}</p>`).join('\n')).join('\n')}
   </div>
 
+  <section class="bloque-guias" aria-labelledby="guias">
+    <h2 class="titulo-seccion" id="guias">Gu&iacute;as</h2>
+    <p class="bloque-guias__intro">Explicaciones paso a paso de lo que hay detr&aacute;s de cada herramienta.</p>
+${listaGuias(guias)}
+    <p><a href="/guias/">Ver todas las gu&iacute;as</a></p>
+  </section>
+
   <section class="faq" aria-labelledby="preguntas">
     <h2 id="preguntas">Preguntas frecuentes</h2>
 ${datos.faq.map(([p, r]) => `    <details class="faq__item">
@@ -246,7 +262,185 @@ ${pie()}
 `;
 }
 
+/* ---------- guias y paginas de contenido ---------- */
+
+function listaGuias(lista) {
+  return `    <ul class="lista-guias">
+${lista.map((g) => `      <li class="lista-guias__item">
+        <a class="lista-guias__titulo" href="/guias/${g.slug}/">${esc(g.titulo)}</a>
+        <p>${esc(g.metaDescripcion)}</p>
+      </li>`).join('\n')}
+    </ul>`;
+}
+
+function migas(items) {
+  const html = '<nav class="migas" aria-label="Ruta"><ol>' + items.map(([r, t]) => r
+    ? `<li><a href="${r}">${esc(t)}</a></li>` : `<li aria-current="page">${esc(t)}</li>`).join('') + '</ol></nav>';
+  const ld = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: items.map(([r, t], i) => ({ '@type': 'ListItem', position: i + 1, name: t, ...(r ? { item: abs(r) } : {}) })),
+  };
+  return [html, ld];
+}
+
+function documento({ ruta, titulo, descripcion, cuerpo, ld = [], tipo = 'website' }) {
+  return `<!doctype html>
+<html lang="${datos.sitio.idioma}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(titulo)}</title>
+<meta name="description" content="${esc(descripcion)}">
+${DOMINIO ? `<link rel="canonical" href="${abs(ruta)}">` : ''}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="${tipo}">
+<meta property="og:title" content="${esc(titulo)}">
+<meta property="og:description" content="${esc(descripcion)}">
+<meta property="og:locale" content="es_PE">
+<meta property="og:site_name" content="${esc(MARCA)}">
+${DOMINIO ? `<meta property="og:url" content="${abs(ruta)}">` : ''}
+<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+<link rel="stylesheet" href="/css/home.css">
+${ld.map((b) => `<script type="application/ld+json">${JSON.stringify(b)}</script>`).join('\n')}
+${etiquetasAdSense()}
+</head>
+<body>
+<a class="salto-contenido" href="#contenido">Ir al contenido</a>
+${cabecera(ruta)}
+<main id="contenido"><div class="contenedor estrecho">
+${cuerpo}
+</div></main>
+${pie()}
+<script type="module">
+  import { init } from '/js/home.js';
+  init();
+</script>
+</body>
+</html>
+`;
+}
+
+function seccionGuia(sec) {
+  let h = `    <h2>${esc(sec.h2)}</h2>\n` + sec.parrafos.map((p) => `    <p>${esc(p)}</p>`).join('\n');
+  if (sec.lista) h += `\n    <ul>\n${sec.lista.map((li) => `      <li>${esc(li)}</li>`).join('\n')}\n    </ul>`;
+  if (sec.despues) h += '\n' + sec.despues.map((p) => `    <p>${esc(p)}</p>`).join('\n');
+  return h;
+}
+
+function cajaHerramienta(t) {
+  return `  <aside class="cta-herramienta">
+    <p>${esc(t.texto)}</p>
+    <a class="boton" href="${t.url}" data-herramienta="${esc(t.boton)}">${esc(t.boton)} ${icono('flecha', 18)}</a>
+  </aside>`;
+}
+
+function paginaGuia(g) {
+  const ruta = `/guias/${g.slug}/`;
+  const [htmlMigas, ldMigas] = migas([['/', 'Inicio'], ['/guias/', 'Guías'], [null, g.titulo]]);
+  const mitad = Math.ceil(g.secciones.length / 2);
+  const otras = guias.filter((o) => o.slug !== g.slug);
+  const ldArticulo = {
+    '@context': 'https://schema.org', '@type': 'Article', headline: g.h1, description: g.metaDescripcion,
+    inLanguage: datos.sitio.idioma, dateModified: HOY, mainEntityOfPage: abs(ruta),
+    author: { '@type': 'Organization', name: MARCA, url: abs('/') },
+    publisher: { '@type': 'Organization', name: MARCA, url: abs('/') },
+  };
+  const ldFaq = {
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: g.faq.map(([p, r]) => ({ '@type': 'Question', name: p, acceptedAnswer: { '@type': 'Answer', text: r } })),
+  };
+  const cuerpo = `  ${htmlMigas}
+  <div class="entrada">
+    <h1>${esc(g.h1)}</h1>
+    ${g.entrada.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
+    <p class="fecha">Actualizado el ${FECHA_LARGA}</p>
+  </div>
+  ${huecoAnuncio('top')}
+  <article class="articulo">
+${g.secciones.slice(0, mitad).map(seccionGuia).join('\n')}
+  </article>
+${cajaHerramienta(g.herramienta)}
+  ${huecoAnuncio('mid')}
+  <article class="articulo">
+${g.secciones.slice(mitad).map(seccionGuia).join('\n')}
+  </article>
+  <section class="faq" aria-labelledby="preguntas">
+    <h2 id="preguntas">Preguntas frecuentes</h2>
+${g.faq.map(([p, r]) => `    <details class="faq__item">
+      <summary>${esc(p)}</summary>
+      <p>${esc(r)}</p>
+    </details>`).join('\n')}
+  </section>
+${cajaHerramienta(g.herramienta)}
+  <section class="bloque-guias" aria-labelledby="otras">
+    <h2 class="titulo-seccion" id="otras">Otras gu&iacute;as</h2>
+${listaGuias(otras)}
+  </section>
+  ${huecoAnuncio('bottom')}`;
+  return documento({ ruta, titulo: `${g.metaTitulo} | ${MARCA}`, descripcion: g.metaDescripcion, cuerpo, ld: [ldArticulo, ldFaq, ldMigas], tipo: 'article' });
+}
+
+function paginaGuias() {
+  const [htmlMigas, ldMigas] = migas([['/', 'Inicio'], [null, 'Guías']]);
+  const cuerpo = `  ${htmlMigas}
+  <div class="entrada">
+    <h1>Gu&iacute;as</h1>
+    <p>Explicaciones claras y verificables de los temas que resuelven nuestras herramientas: c&oacute;mo se calculan los beneficios laborales en Per&uacute;, c&oacute;mo hacer que un c&oacute;digo QR funcione bien impreso y c&oacute;mo acertar con la talla al comprar calzado en tallas de Estados Unidos.</p>
+    <p>Cada gu&iacute;a termina con la herramienta que hace el c&aacute;lculo por ti.</p>
+  </div>
+${listaGuias(guias)}
+  ${huecoAnuncio('bottom')}`;
+  return documento({ ruta: '/guias/', titulo: `Guías: CTS, liquidación, códigos QR y tallas | ${MARCA}`,
+    descripcion: 'Guías prácticas sobre CTS y liquidación en Perú, tamaño y usos de los códigos QR y cómo acertar con la talla de zapatillas en tallas de EE. UU.',
+    cuerpo, ld: [ldMigas] });
+}
+
+function paginaSobre() {
+  const [htmlMigas, ldMigas] = migas([['/', 'Inicio'], [null, 'Sobre nosotros']]);
+  const cuerpo = `  ${htmlMigas}
+  <div class="entrada">
+    <h1>Sobre <span data-marca>${esc(MARCA)}</span></h1>
+    <p>microtools es un proyecto personal de un ingeniero industrial en Lima, Per&uacute;, que trabaja en automatizaci&oacute;n de procesos y sistemas empresariales. Cada herramienta naci&oacute; de un problema propio o cercano que se resolv&iacute;a con m&aacute;s pasos de los necesarios.</p>
+  </div>
+  <div class="articulo">
+    <h2>Qu&eacute; hacemos</h2>
+    <p>Construimos herramientas web peque&ntilde;as que resuelven una tarea concreta de principio a fin: generar un c&oacute;digo QR listo para imprimir, incluso en 3D; calcular una liquidaci&oacute;n laboral seg&uacute;n la normativa peruana con el detalle de cada concepto; o convertir una talla de calzado de Estados Unidos a la talla local. Junto a cada herramienta publicamos gu&iacute;as que explican el tema con ejemplos, para que el resultado se pueda entender y comprobar.</p>
+    <h2>C&oacute;mo trabajamos</h2>
+    <p>Todas las herramientas se ejecutan en el navegador de quien las usa. No pedimos registro, no guardamos lo que se escribe y no ponemos l&iacute;mites ni marcas de agua para luego cobrar por quitarlos. Cuando una herramienta se apoya en normas o en tablas de terceros, lo indicamos y revisamos esas fuentes cuando cambian.</p>
+    <p>Las gu&iacute;as se redactan a partir de la normativa vigente y de la documentaci&oacute;n t&eacute;cnica de cada est&aacute;ndar. Son informativas: no reemplazan la asesor&iacute;a de un abogado, un contador o un especialista cuando hay una decisi&oacute;n importante de por medio.</p>
+    <h2>C&oacute;mo se financia</h2>
+    <p>El sitio se sostiene con publicidad de Google AdSense, mostrada en espacios reservados que no tapan las herramientas. Los anunciantes no influyen en el contenido de las gu&iacute;as ni en c&oacute;mo funcionan las herramientas.</p>
+    <h2>Errores y sugerencias</h2>
+    <p>Si encuentras un c&aacute;lculo que no cuadra, un dato desactualizado o tienes una idea para una herramienta nueva, escr&iacute;benos desde la p&aacute;gina de <a href="/contacto/">contacto</a>. Las correcciones se publican en cuanto se verifican.</p>
+  </div>`;
+  return documento({ ruta: '/sobre-nosotros/', titulo: `Sobre nosotros | ${MARCA}`,
+    descripcion: 'Quién está detrás de microtools, cómo construimos las herramientas, cómo se financia el sitio y cómo reportar un error.', cuerpo, ld: [ldMigas] });
+}
+
+function paginaContacto() {
+  const [htmlMigas, ldMigas] = migas([['/', 'Inicio'], [null, 'Contacto']]);
+  const cuerpo = `  ${htmlMigas}
+  <div class="entrada">
+    <h1>Contacto</h1>
+    <p>Para consultas, reportes de errores o sugerencias de nuevas herramientas, escr&iacute;benos por correo. Respondemos en un plazo de dos a tres d&iacute;as h&aacute;biles.</p>
+  </div>
+  <div class="articulo">
+    <p class="correo-contacto" data-correo-bloque>Correo: <a data-correo href="mailto:${esc(CORREO)}">${esc(CORREO)}</a></p>
+    <h2>Para que podamos ayudarte m&aacute;s r&aacute;pido</h2>
+    <ul>
+      <li>Indica qu&eacute; herramienta o gu&iacute;a usaste, con su enlace.</li>
+      <li>Si un c&aacute;lculo no cuadra, cu&eacute;ntanos qu&eacute; datos ingresaste y qu&eacute; resultado esperabas. No env&iacute;es documentos con datos personales.</li>
+      <li>Si un c&oacute;digo QR no escanea, adjunta una captura o una foto del c&oacute;digo impreso y dinos con qu&eacute; tel&eacute;fono lo probaste.</li>
+    </ul>
+    <h2>Lo que no podemos hacer</h2>
+    <p>No damos asesor&iacute;a legal, laboral ni tributaria personalizada. Si tu caso tiene consecuencias econ&oacute;micas importantes, consulta a un profesional o a la SUNAFIL. Tampoco podemos recuperar resultados generados con las herramientas: como todo se procesa en tu navegador, no guardamos ninguna copia.</p>
+  </div>`;
+  return documento({ ruta: '/contacto/', titulo: `Contacto | ${MARCA}`,
+    descripcion: 'Escríbenos para reportar un error, hacer una consulta o sugerir una nueva herramienta de microtools.', cuerpo, ld: [ldMigas] });
+}
+
 /* ---------- paginas legales ---------- */
+
 
 const TEXTOS_LEGALES = {
   'Aviso legal': `
@@ -343,6 +537,10 @@ function sitemap() {
   // es lo que de verdad son.
   const urls = [
     entrada('/', '1.0', 'monthly'),
+    entrada('/guias/', '0.8', 'monthly'),
+    ...guias.map((g) => entrada(`/guias/${g.slug}/`, '0.8', 'monthly')),
+    entrada('/sobre-nosotros/', '0.5', 'yearly'),
+    entrada('/contacto/', '0.4', 'yearly'),
     ...datos.legales.map((l) => entrada(l.ruta, '0.3', 'yearly')),
   ].join('\n');
 
@@ -446,6 +644,10 @@ const escritos = [];
 
 escritos.push(escribir('index.html', paginaIndice()));
 for (const l of datos.legales) escritos.push(escribir(l.archivo, paginaLegal(l)));
+escritos.push(escribir('guias/index.html', paginaGuias()));
+for (const g of guias) escritos.push(escribir(`guias/${g.slug}/index.html`, paginaGuia(g)));
+escritos.push(escribir('sobre-nosotros/index.html', paginaSobre()));
+escritos.push(escribir('contacto/index.html', paginaContacto()));
 escritos.push(escribir('sitemap.xml', sitemap()));
 escritos.push(escribir('robots.txt', robots()));
 escritos.push(escribir('ads.txt', adsTxt()));

@@ -79,6 +79,16 @@ js/home.js             marca, analítica y anuncios
 js/ads.js              carga diferida de los bloques de anuncio
 ```
 
+## Guías y páginas de contenido
+
+`data/guias.json` contiene las guías (`/guias/<slug>/`): título, metadatos,
+entrada, secciones (`h2`, `parrafos`, `lista` opcional, `despues` opcional),
+preguntas frecuentes y la herramienta a la que llevan. El build genera además
+`/guias/`, `/sobre-nosotros/` y `/contacto/`, y las añade al sitemap.
+
+Para publicar una guía nueva basta con añadir una entrada al JSON y volver a
+ejecutar `node build/generar.mjs`.
+
 ## Añadir una herramienta al índice
 
 Una entrada más en `herramientas`, dentro de `data/sitio.json`:

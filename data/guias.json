@@ -1,0 +1,480 @@
+{
+ "guias": [
+  {
+   "slug": "como-calcular-la-cts-en-peru",
+   "titulo": "Cómo calcular la CTS en Perú",
+   "metaTitulo": "Cómo calcular la CTS en Perú: fórmula, fechas y ejemplo",
+   "metaDescripcion": "Qué es la CTS, quién tiene derecho, cuándo se deposita y cómo calcularla paso a paso con la remuneración computable, los meses y los días. Con un ejemplo resuelto.",
+   "h1": "Cómo calcular la CTS en Perú, paso a paso",
+   "entrada": [
+    "La compensación por tiempo de servicios (CTS) es un beneficio que el empleador deposita dos veces al año en una cuenta a nombre del trabajador. Funciona como un ahorro para cuando la relación laboral termina, y por eso conviene saber calcularla: es la forma más rápida de comprobar que el depósito que te hicieron es el correcto.",
+    "En esta guía verás quién tiene derecho, qué entra en la remuneración computable, la fórmula de cálculo y un ejemplo con números. Al final encontrarás la calculadora de liquidación, que hace el mismo cálculo con tu caso y te muestra cada paso."
+   ],
+   "secciones": [
+    {
+     "h2": "Quién tiene derecho a la CTS",
+     "parrafos": [
+      "Tienen derecho a la CTS los trabajadores del régimen laboral general de la actividad privada que cumplen, en promedio, una jornada mínima de cuatro horas diarias. Los trabajadores de una pequeña empresa inscrita en el REMYPE la reciben en una proporción menor, y los de una microempresa inscrita en ese registro no la reciben.",
+      "Si no sabes en qué régimen está tu empresa, revisa tu boleta de pago o pregunta a recursos humanos: el régimen cambia tanto la CTS como las vacaciones y las gratificaciones."
+     ]
+    },
+    {
+     "h2": "Cuándo se deposita",
+     "parrafos": [
+      "La CTS se deposita dos veces al año y cada depósito cubre un semestre de trabajo:"
+     ],
+     "lista": [
+      "Hasta el 15 de mayo: el periodo trabajado entre noviembre y abril.",
+      "Hasta el 15 de noviembre: el periodo trabajado entre mayo y octubre."
+     ],
+     "despues": [
+      "Cuando el vínculo laboral termina, el empleador deposita la CTS que quedó pendiente —la llamada CTS trunca— junto con el resto de la liquidación."
+     ]
+    },
+    {
+     "h2": "Qué es la remuneración computable",
+     "parrafos": [
+      "La base del cálculo no es solo el sueldo básico. La remuneración computable suma todo lo que el trabajador recibe de forma regular por su trabajo:"
+     ],
+     "lista": [
+      "La remuneración básica mensual.",
+      "La asignación familiar, si la percibes.",
+      "Las comisiones, horas extras u otros conceptos que se paguen con regularidad.",
+      "Un sexto de la gratificación recibida en el semestre: la de diciembre para el depósito de mayo y la de julio para el de noviembre."
+     ],
+     "despues": [
+      "No entran en la base los conceptos que no son remuneración, como la movilidad que se entrega para trabajar o las gratificaciones extraordinarias que se pagan una sola vez."
+     ]
+    },
+    {
+     "h2": "La fórmula",
+     "parrafos": [
+      "Con la remuneración computable (RC) definida, la CTS del semestre se calcula sumando los meses completos trabajados y los días sueltos:",
+      "CTS = (RC ÷ 12) × meses completos + (RC ÷ 360) × días.",
+      "Si trabajaste el semestre completo, son seis meses y ningún día suelto, así que el depósito equivale a media remuneración computable. Si entraste a mitad de periodo, se cuentan solo los meses y días que efectivamente trabajaste."
+     ]
+    },
+    {
+     "h2": "Un ejemplo con números",
+     "parrafos": [
+      "Supongamos un trabajador con un sueldo de S/ 2,000, sin asignación familiar, que trabajó completo el periodo de noviembre a abril y recibió en diciembre una gratificación de S/ 2,000."
+     ],
+     "lista": [
+      "Sexto de la gratificación: 2,000 ÷ 6 = S/ 333.33.",
+      "Remuneración computable: 2,000 + 333.33 = S/ 2,333.33.",
+      "Meses completos: 6, días sueltos: 0.",
+      "CTS: 2,333.33 ÷ 12 × 6 = S/ 1,166.67."
+     ],
+     "despues": [
+      "Si el mismo trabajador hubiera entrado el 17 de diciembre, tendría 4 meses completos (enero a abril) y 15 días de diciembre: 2,333.33 ÷ 12 × 4 + 2,333.33 ÷ 360 × 15 = S/ 777.78 + S/ 97.22 = S/ 875.00. En la práctica, además, la gratificación de diciembre de quien entra a mitad de mes también es proporcional, y eso cambia el sexto que se suma."
+     ]
+    },
+    {
+     "h2": "Errores frecuentes al revisar el depósito",
+     "parrafos": [
+      "Olvidar el sexto de la gratificación es el error más común: hace que el depósito parezca mayor de lo que uno calcula. El segundo es usar el sueldo neto, después de descuentos de AFP u ONP, cuando la base es la remuneración bruta. El tercero es contar meses incompletos como completos: un mes cuenta entero solo si se trabajó de inicio a fin.",
+      "Las reglas sobre cuánto de la CTS se puede retirar cambian con leyes temporales, así que conviene revisar la norma vigente antes de planificar un retiro."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿La CTS se paga si renuncio?",
+     "Sí. La CTS no depende del motivo del cese: al terminar el vínculo, el empleador debe depositar la CTS trunca del periodo que quedó pendiente."
+    ],
+    [
+     "¿Se descuenta AFP u ONP de la CTS?",
+     "No. La CTS no está afecta a aportes previsionales ni a descuentos de pensión."
+    ],
+    [
+     "¿Qué pasa si el empleador no deposita a tiempo?",
+     "El empleador queda obligado a pagar el monto con los intereses correspondientes, y el trabajador puede presentar una denuncia ante la SUNAFIL."
+    ]
+   ],
+   "herramienta": {
+    "texto": "Calcula tu CTS trunca, tu gratificación, tus vacaciones y la indemnización con el desglose de cada concepto.",
+    "url": "https://liquidacion.microtools.lat/",
+    "boton": "Abrir la calculadora de liquidación"
+   }
+  },
+  {
+   "slug": "como-calcular-tu-liquidacion-en-peru",
+   "titulo": "Cómo calcular tu liquidación de beneficios sociales en Perú",
+   "metaTitulo": "Liquidación de beneficios sociales en Perú: qué incluye y cómo calcularla",
+   "metaDescripcion": "Qué conceptos incluye la liquidación al terminar un trabajo en Perú —CTS trunca, gratificación trunca, vacaciones e indemnización— y cómo se calcula cada uno.",
+   "h1": "Liquidación de beneficios sociales en Perú: qué incluye y cómo se calcula",
+   "entrada": [
+    "Cuando un trabajo termina, por renuncia, despido o fin de contrato, el empleador debe pagar una liquidación con los beneficios que se generaron y todavía no se pagaron. La hoja de liquidación suele llegar con un total y pocas explicaciones, así que vale la pena saber qué debería incluir y cómo se calcula cada parte.",
+    "Esta guía explica los conceptos uno por uno para el régimen laboral general. Si trabajas en una pequeña o microempresa inscrita en el REMYPE, algunos montos son menores o no aplican."
+   ],
+   "secciones": [
+    {
+     "h2": "Los conceptos que entran en la liquidación",
+     "parrafos": [
+      "Una liquidación del régimen general puede incluir hasta cinco conceptos, según cuánto tiempo trabajaste y cómo terminó la relación:"
+     ],
+     "lista": [
+      "CTS trunca: la CTS del periodo que todavía no se había depositado.",
+      "Gratificación trunca: la parte proporcional de la gratificación de julio o diciembre que no llegaste a cobrar.",
+      "Vacaciones truncas: la parte proporcional de vacaciones del año que no completaste.",
+      "Vacaciones no gozadas: los periodos vacacionales ganados que no llegaste a tomar.",
+      "Indemnización por despido arbitrario: solo si el empleador terminó el contrato sin causa justa."
+     ]
+    },
+    {
+     "h2": "CTS trunca",
+     "parrafos": [
+      "Se calcula igual que la CTS normal, pero solo por los meses y días transcurridos desde el último depósito hasta el cese. La base es la remuneración computable: sueldo, asignación familiar, conceptos regulares y un sexto de la última gratificación. La fórmula es la remuneración computable dividida entre 12 por cada mes completo, más la misma remuneración dividida entre 360 por cada día suelto."
+     ]
+    },
+    {
+     "h2": "Gratificación trunca",
+     "parrafos": [
+      "Las gratificaciones de julio y de diciembre equivalen a un sueldo completo cada una si se trabaja todo el semestre (enero a junio y julio a diciembre). Si cesas antes, recibes un sexto del sueldo por cada mes completo trabajado en el semestre en curso, siempre que hayas trabajado al menos un mes completo.",
+      "A la gratificación se le suma una bonificación extraordinaria equivalente a lo que el empleador habría aportado a EsSalud: el 9 % de la gratificación, o el 6.75 % si estás afiliado a una EPS."
+     ]
+    },
+    {
+     "h2": "Vacaciones truncas y no gozadas",
+     "parrafos": [
+      "Por cada año completo de trabajo se ganan 30 días de vacaciones pagadas. Si el vínculo termina antes de completar el año, corresponden vacaciones truncas: un doceavo de la remuneración por cada mes completo y un treintavo de ese doceavo por cada día.",
+      "Si ya habías ganado un periodo vacacional y no lo tomaste, se te paga esa remuneración vacacional. Y si además venció el plazo para gozarlas, que es el año siguiente a cuando se ganaron, el empleador debe pagar una indemnización adicional equivalente a otra remuneración."
+     ]
+    },
+    {
+     "h2": "Indemnización por despido arbitrario",
+     "parrafos": [
+      "Solo corresponde cuando el empleador termina la relación sin una causa justa prevista en la ley. No se paga por renuncia ni por el vencimiento normal de un contrato a plazo fijo."
+     ],
+     "lista": [
+      "Contrato a plazo indeterminado: una remuneración y media por cada año completo, con las fracciones de año calculadas por dozavos y treintavos, hasta un tope de 12 remuneraciones.",
+      "Contrato a plazo fijo: una remuneración y media por cada mes que faltaba para el vencimiento del contrato, con el mismo tope de 12 remuneraciones."
+     ]
+    },
+    {
+     "h2": "Plazo de pago y cómo revisar tu hoja",
+     "parrafos": [
+      "El empleador debe pagar los beneficios sociales dentro de las 48 horas siguientes al cese. Si no lo hace, el monto genera intereses y puedes acudir a la SUNAFIL.",
+      "Para revisar la hoja, compara concepto por concepto, no solo el total: verifica la fecha de ingreso y de cese, la remuneración que usaron como base, si incluyeron la asignación familiar y si sumaron el sexto de la gratificación en la CTS. La mayoría de las diferencias aparecen en uno de esos cuatro puntos."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿Me pagan liquidación si renuncio?",
+     "Sí. Al renunciar te corresponden la CTS trunca, la gratificación trunca y las vacaciones truncas o no gozadas. Lo único que no corresponde es la indemnización por despido."
+    ],
+    [
+     "¿La liquidación paga impuesto a la renta?",
+     "La CTS y la indemnización por despido, dentro de los montos que fija la ley, no están afectas al impuesto a la renta. La gratificación y las vacaciones sí son renta de quinta categoría."
+    ],
+    [
+     "¿Qué hago si no estoy de acuerdo con el monto?",
+     "Puedes firmar la liquidación dejando constancia de tu desacuerdo, pedir el detalle por escrito y, si no se corrige, presentar una denuncia ante la SUNAFIL."
+    ]
+   ],
+   "herramienta": {
+    "texto": "Ingresa tus fechas y tu sueldo y obtén cada concepto de tu liquidación con la memoria de cálculo.",
+    "url": "https://liquidacion.microtools.lat/",
+    "boton": "Calcular mi liquidación"
+   }
+  },
+  {
+   "slug": "que-tamano-debe-tener-un-codigo-qr",
+   "titulo": "¿Qué tamaño debe tener un código QR impreso?",
+   "metaTitulo": "Tamaño de un código QR impreso: la regla 10 a 1 y otros consejos",
+   "metaDescripcion": "Qué tamaño debe tener un QR para que escanee bien en tarjetas, mesas, afiches y paneles. La regla de la distancia, el margen blanco, el contraste y el nivel de corrección.",
+   "h1": "¿Qué tamaño debe tener un código QR impreso?",
+   "entrada": [
+    "Un código QR que no escanea es peor que no tener ninguno: el cliente lo intenta, falla y no vuelve a intentarlo. Casi siempre el problema es el tamaño, el margen o el contraste, y los tres se resuelven antes de imprimir.",
+    "Esta guía resume las reglas prácticas para que tu QR funcione en una tarjeta, en una mesa o en un afiche a varios metros de distancia."
+   ],
+   "secciones": [
+    {
+     "h2": "La regla de la distancia: 10 a 1",
+     "parrafos": [
+      "La referencia más útil es simple: el lado del código debe medir al menos la décima parte de la distancia desde la que se va a escanear. Un QR que se leerá a 1 metro debería medir unos 10 cm; uno que se leerá a 3 metros, unos 30 cm."
+     ],
+     "lista": [
+      "Tarjeta de presentación o etiqueta de producto, escaneada en la mano: mínimo 2 × 2 cm.",
+      "Carta o mesa de restaurante, a unos 30–40 cm: entre 3 y 4 cm.",
+      "Afiche en una pared, a 1–2 metros: entre 10 y 20 cm.",
+      "Panel o vitrina visto desde la vereda, a 3–5 metros: entre 30 y 50 cm."
+     ]
+    },
+    {
+     "h2": "La cantidad de datos también importa",
+     "parrafos": [
+      "Cuanto más texto lleva el código, más cuadros pequeños (módulos) tiene, y cada módulo resulta más difícil de distinguir. Un enlace corto genera un código simple que escanea bien incluso pequeño; una tarjeta de contacto completa genera uno denso que necesita más tamaño.",
+      "Si tu código se ve muy cargado, acorta el enlace o quita datos que no sean necesarios antes de agrandarlo."
+     ]
+    },
+    {
+     "h2": "El margen blanco no es decorativo",
+     "parrafos": [
+      "Alrededor del código debe quedar una zona libre de al menos cuatro módulos de ancho. Es la referencia que usa el lector para saber dónde empieza y termina el código. Si pegas el QR al borde de la tarjeta o pones texto encima de ese margen, muchos teléfonos no lo reconocen."
+     ]
+    },
+    {
+     "h2": "Contraste y colores",
+     "parrafos": [
+      "Los lectores buscan módulos oscuros sobre fondo claro. Puedes usar colores de marca, pero manteniendo un contraste alto: azul oscuro, verde oscuro o vino sobre blanco o crema funcionan bien. Evita los códigos invertidos (claro sobre oscuro), los degradados fuertes y los fondos con textura, porque varios lectores no los leen.",
+      "Al imprimir en superficies brillantes o metálicas, el reflejo de la luz puede borrar parte del código. Un acabado mate evita el problema."
+     ]
+    },
+    {
+     "h2": "Corrección de errores y logos",
+     "parrafos": [
+      "Los códigos QR incluyen información redundante para seguir funcionando aunque una parte esté dañada. Hay cuatro niveles: L (recupera hasta 7 %), M (15 %), Q (25 %) y H (30 %). Si vas a poner un logo en el centro, usa el nivel H y que el logo no ocupe más de una quinta parte del código."
+     ]
+    },
+    {
+     "h2": "Antes de mandar a imprenta",
+     "parrafos": [
+      "Una revisión de dos minutos evita reimprimir:"
+     ],
+     "lista": [
+      "Descarga el código en SVG o en PNG de alta resolución, nunca una captura de pantalla.",
+      "Escanéalo con al menos dos teléfonos distintos, uno de gama baja.",
+      "Imprime una prueba al tamaño real y escanéala desde la distancia real.",
+      "Comprueba que el enlace abre la página correcta y que esa página carga bien en el celular."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿Cuál es el tamaño mínimo de un QR?",
+     "Para escanear en la mano, unos 2 × 2 cm con un enlace corto. Por debajo de eso, muchos teléfonos tienen problemas para enfocar."
+    ],
+    [
+     "¿Un QR más grande escanea siempre mejor?",
+     "Hasta cierto punto. Si el código es más grande que el visor de la cámara a esa distancia, el teléfono no lo encuadra. Lo importante es la proporción con la distancia."
+    ],
+    [
+     "¿Puedo imprimir un QR en color?",
+     "Sí, siempre que el color de los módulos sea oscuro y el fondo claro, con buen contraste entre ambos."
+    ]
+   ],
+   "herramienta": {
+    "texto": "Genera tu QR en SVG o PNG al tamaño que necesites, con colores, logo y comprobación de que escanea.",
+    "url": "https://qr.microtools.lat/",
+    "boton": "Abrir el generador de QR"
+   }
+  },
+  {
+   "slug": "codigo-qr-para-wifi-y-whatsapp",
+   "titulo": "Cómo crear un código QR para tu WiFi y tu WhatsApp",
+   "metaTitulo": "Código QR para WiFi y WhatsApp: cómo crearlos y qué datos llevan",
+   "metaDescripcion": "Cómo funciona un QR de WiFi que conecta sin escribir la contraseña y un QR de WhatsApp que abre el chat con un mensaje listo. Formato, número con código de país y errores comunes.",
+   "h1": "Cómo crear un código QR para tu WiFi y tu WhatsApp",
+   "entrada": [
+    "Dos de los usos más prácticos de un código QR son conectar a una red WiFi sin dictar la contraseña y abrir un chat de WhatsApp sin que la otra persona tenga que guardar tu número. Ambos funcionan con los lectores de cámara que ya traen los teléfonos, sin instalar nada.",
+    "Aquí verás qué datos lleva cada uno, cómo se escriben y los errores que hacen que no funcionen."
+   ],
+   "secciones": [
+    {
+     "h2": "QR de WiFi: qué contiene",
+     "parrafos": [
+      "Un QR de WiFi guarda tres datos: el nombre de la red (SSID), la contraseña y el tipo de seguridad. Al escanearlo, el teléfono ofrece conectarse directamente. Internamente el texto tiene este formato:",
+      "WIFI:T:WPA;S:NombreDeLaRed;P:LaContraseña;;",
+      "T es el tipo de seguridad (WPA para casi todos los routers actuales, WEP para equipos muy antiguos o nopass si la red está abierta), S es el nombre de la red y P la contraseña. Si la red está oculta, se añade H:true."
+     ]
+    },
+    {
+     "h2": "Errores que hacen fallar un QR de WiFi",
+     "parrafos": [
+      "Casi todos los fallos vienen de estos detalles:"
+     ],
+     "lista": [
+      "El nombre de la red debe escribirse exactamente igual, con mayúsculas, minúsculas y espacios.",
+      "Si la contraseña o el nombre contienen punto y coma, coma, dos puntos, comillas o barra invertida, esos caracteres deben ir precedidos de una barra invertida. Un buen generador lo hace solo.",
+      "Si cambias la contraseña del router, el QR impreso deja de funcionar y hay que generar uno nuevo.",
+      "Las redes de empresa con usuario y contraseña (WPA2-Enterprise) no se pueden configurar con un QR estándar."
+     ]
+    },
+    {
+     "h2": "QR de WhatsApp: el enlace wa.me",
+     "parrafos": [
+      "WhatsApp ofrece enlaces de chat con el formato wa.me seguido del número. Al escanear un QR que contiene ese enlace, se abre WhatsApp con tu chat listo para escribir, sin necesidad de guardar el contacto.",
+      "El número va completo, con el código de país y sin el signo más, espacios ni guiones. Para un celular de Perú se antepone 51: un número 987 654 321 queda como wa.me/51987654321."
+     ]
+    },
+    {
+     "h2": "Un mensaje ya escrito",
+     "parrafos": [
+      "Puedes añadir un texto que aparecerá escrito en el chat, listo para enviar, con el parámetro text: wa.me/51987654321?text=Hola,%20quiero%20información. Los espacios se codifican como %20 y los generadores lo hacen automáticamente.",
+      "Un mensaje predefinido ayuda a saber desde dónde te escriben: por ejemplo, «Hola, vi su anuncio en la tienda de Miraflores». Así sabes qué afiche o qué volante funciona mejor."
+     ]
+    },
+    {
+     "h2": "Dónde ponerlos",
+     "parrafos": [
+      "El QR de WiFi funciona bien en la recepción de un negocio, en un hospedaje o en la sala de tu casa para las visitas. El de WhatsApp, en tarjetas de presentación, empaques, vitrinas, cartas de restaurante y volantes. En ambos casos, añade una línea de texto que diga qué hace el código, como «Escanea para conectarte al WiFi» o «Escríbenos por WhatsApp»: la gente escanea más cuando sabe qué va a pasar."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿El QR de WiFi deja ver la contraseña?",
+     "Sí. La contraseña está guardada en el código y algunos lectores la muestran. Si no quieres compartirla, crea una red de invitados en tu router y usa el QR para esa red."
+    ],
+    [
+     "¿Funciona el QR de WhatsApp con WhatsApp Business?",
+     "Sí. El enlace wa.me abre el chat con el número indicado, sea una cuenta normal o de empresa."
+    ],
+    [
+     "¿El código deja de funcionar con el tiempo?",
+     "No, si el código contiene directamente los datos. Solo deja de funcionar si cambias la contraseña del WiFi o el número de WhatsApp."
+    ]
+   ],
+   "herramienta": {
+    "texto": "Crea un QR de WiFi o de WhatsApp en segundos, con mensaje predefinido, colores y descarga en alta resolución.",
+    "url": "https://qr.microtools.lat/",
+    "boton": "Crear mi QR"
+   }
+  },
+  {
+   "slug": "qr-estatico-o-dinamico",
+   "titulo": "QR estático o dinámico: cuál te conviene",
+   "metaTitulo": "QR estático vs dinámico: diferencias, ventajas y riesgos",
+   "metaDescripcion": "Qué diferencia hay entre un código QR estático y uno dinámico, cuándo conviene cada uno y por qué los QR dinámicos gratuitos pueden dejar de funcionar.",
+   "h1": "QR estático o dinámico: cuál te conviene",
+   "entrada": [
+    "Al crear un código QR muchas páginas ofrecen dos opciones: estático o dinámico. La diferencia parece técnica, pero decide algo muy práctico: si tu código seguirá funcionando dentro de dos años y quién controla a dónde lleva."
+   ],
+   "secciones": [
+    {
+     "h2": "Qué es un QR estático",
+     "parrafos": [
+      "Un QR estático guarda el contenido final dentro del propio código: el enlace, el texto, los datos del WiFi o la tarjeta de contacto. Cuando alguien lo escanea, el teléfono lee esos datos directamente, sin pasar por ningún servidor intermedio.",
+      "Su ventaja principal es que no depende de nadie: mientras la página de destino exista, el código funciona. No caduca, no tiene límite de escaneos y no requiere una cuenta."
+     ]
+    },
+    {
+     "h2": "Qué es un QR dinámico",
+     "parrafos": [
+      "Un QR dinámico guarda un enlace corto que pertenece a la empresa que lo generó. Al escanearlo, el teléfono visita primero ese enlace y la empresa lo redirige al destino que configuraste. Eso permite dos cosas: cambiar el destino sin reimprimir el código y contar cuántas veces se escaneó."
+     ]
+    },
+    {
+     "h2": "El riesgo de los QR dinámicos gratuitos",
+     "parrafos": [
+      "Como todo escaneo pasa por el servidor del proveedor, el código funciona solo mientras ese proveedor quiera y pueda redirigirlo. Muchos servicios ofrecen QR dinámicos gratis por un periodo de prueba y luego los desactivan si no pagas la suscripción. Si ya imprimiste mil volantes o grabaste el código en un producto, quedas atado a ese pago o a reimprimir todo.",
+      "También pierdes control sobre lo que ve tu cliente: algunos proveedores muestran una página intermedia con publicidad antes de redirigir."
+     ]
+    },
+    {
+     "h2": "Cuándo conviene cada uno",
+     "parrafos": [
+      "Para la mayoría de usos, el estático es la opción más segura:"
+     ],
+     "lista": [
+      "Estático: tarjetas de presentación, WiFi, WhatsApp, empaques, placas, productos y cualquier impresión que deba durar años.",
+      "Dinámico de pago: campañas donde necesitas cambiar el destino a menudo o medir escaneos por punto de venta, y estás dispuesto a pagar el servicio mientras dure la campaña."
+     ]
+    },
+    {
+     "h2": "Una alternativa: medir sin depender de un proveedor",
+     "parrafos": [
+      "Si lo que te interesa es saber cuántas personas llegan desde un afiche, puedes usar un QR estático que apunte a tu propia página con un parámetro de campaña (por ejemplo, ?utm_source=afiche-tienda). Tu herramienta de analítica cuenta las visitas y el código sigue siendo tuyo para siempre.",
+      "Y si necesitas poder cambiar el destino, apunta el QR a una página de tu propio dominio que puedas editar o redirigir tú mismo."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿Un QR estático tiene límite de escaneos?",
+     "No. El código contiene los datos y el teléfono los lee directamente, así que puede escanearse sin límite."
+    ],
+    [
+     "¿Puedo cambiar el enlace de un QR estático?",
+     "No, el contenido queda fijo. Si apuntas a una página de tu dominio, puedes cambiar lo que muestra esa página sin tocar el código."
+    ],
+    [
+     "¿Los QR de microtools son estáticos?",
+     "Sí. Apuntan directamente a tu enlace, no pasan por un redireccionador nuestro y no caducan."
+    ]
+   ],
+   "herramienta": {
+    "texto": "Genera códigos QR estáticos, sin caducidad ni límite de escaneos, en PNG, SVG o para imprimir en 3D.",
+    "url": "https://qr.microtools.lat/",
+    "boton": "Generar un QR que no caduca"
+   }
+  },
+  {
+   "slug": "como-saber-tu-talla-de-zapatillas",
+   "titulo": "Cómo saber tu talla de zapatillas al comprar en tallas de EE. UU.",
+   "metaTitulo": "Cómo saber tu talla de zapatillas US: medir el pie y convertir",
+   "metaDescripcion": "Cómo medir tu pie en casa, por qué la talla US de hombre y de mujer no es la misma y cómo convertir a tu talla local antes de comprar zapatillas por internet.",
+   "h1": "Cómo saber tu talla de zapatillas al comprar en tallas de EE. UU.",
+   "entrada": [
+    "Comprar zapatillas por internet o en una tienda que usa tallas de Estados Unidos tiene un riesgo claro: la talla que usas en tu país no se traduce de forma directa, y cada marca tiene su propia tabla. La forma más fiable de acertar es partir del largo de tu pie en centímetros.",
+    "En esta guía verás cómo medirlo bien en casa, por qué hombre y mujer no comparten talla y qué revisar antes de pagar."
+   ],
+   "secciones": [
+    {
+     "h2": "Mide tu pie en cinco minutos",
+     "parrafos": [
+      "Solo necesitas una hoja, un lápiz y una regla:"
+     ],
+     "lista": [
+      "Mide por la tarde: el pie se hincha un poco a lo largo del día.",
+      "Usa las medias que llevarías con esas zapatillas.",
+      "Pon la hoja contra una pared, apoya el talón en la pared y marca la punta del dedo más largo.",
+      "Mide del borde de la hoja a la marca, en centímetros, y repite con el otro pie.",
+      "Quédate con la medida del pie más largo."
+     ]
+    },
+    {
+     "h2": "Por qué los centímetros son la referencia",
+     "parrafos": [
+      "Las tallas US, europeas y latinoamericanas son escalas distintas, con saltos distintos entre una talla y la siguiente. Los centímetros, en cambio, miden lo mismo en todas partes. Por eso la mayoría de marcas incluyen el largo del pie en centímetros en su tabla oficial: es el dato que te permite comparar entre sistemas sin adivinar."
+     ]
+    },
+    {
+     "h2": "Hombre y mujer no tienen la misma talla US",
+     "parrafos": [
+      "En Estados Unidos la escala de mujer está desplazada respecto a la de hombre: para el mismo largo de pie, la talla de mujer es un número y medio más alta en la mayoría de marcas. Una talla 8 de hombre suele corresponder a una 9.5 de mujer. Si compras un modelo unisex, fíjate en qué escala está la talla que eliges."
+     ]
+    },
+    {
+     "h2": "Cada marca calza distinto",
+     "parrafos": [
+      "Dos zapatillas con la misma talla US pueden no medir igual por dentro. Algunas marcas tienen hormas más estrechas o más cortas, y dentro de una misma marca algunos modelos de running calzan distinto que los de uso diario. Por eso conviene revisar la tabla de la marca concreta y las opiniones de otros compradores sobre si el modelo «talla grande» o «talla chica»."
+     ]
+    },
+    {
+     "h2": "Antes de pagar",
+     "parrafos": [
+      "Una lista corta para evitar devoluciones:"
+     ],
+     "lista": [
+      "Compara tu largo de pie con la tabla de la marca, no con una tabla genérica.",
+      "Deja entre medio y un centímetro de espacio delante de los dedos, sobre todo para correr.",
+      "Si estás entre dos tallas, elige la mayor.",
+      "Revisa la política de cambios de la tienda antes de comprar."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿Cuánto espacio debe quedar en la punta?",
+     "Entre medio y un centímetro, aproximadamente el ancho de un dedo. Para correr, mejor acercarse al centímetro."
+    ],
+    [
+     "¿Es igual la talla US de hombre y de mujer?",
+     "No. Para el mismo largo de pie, la talla de mujer suele ser un número y medio más alta."
+    ],
+    [
+     "¿Sirve medir el zapato en vez del pie?",
+     "No es fiable: el largo exterior del zapato incluye la suela y la punta. Mide siempre el pie."
+    ]
+   ],
+   "herramienta": {
+    "texto": "Convierte tu talla US a Chile, Perú y Colombia, o calcula tu talla a partir del largo de tu pie, con las tablas de cada marca.",
+    "url": "https://tallas.microtools.lat/",
+    "boton": "Abrir el conversor de tallas"
+   }
+  }
+ ]
+}

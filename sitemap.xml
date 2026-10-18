@@ -2,25 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://microtools.lat/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://microtools.lat/guias/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://microtools.lat/guias/como-calcular-la-cts-en-peru/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://microtools.lat/guias/como-calcular-tu-liquidacion-en-peru/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://microtools.lat/guias/que-tamano-debe-tener-un-codigo-qr/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://microtools.lat/guias/codigo-qr-para-wifi-y-whatsapp/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://microtools.lat/guias/qr-estatico-o-dinamico/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://microtools.lat/guias/como-saber-tu-talla-de-zapatillas/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://microtools.lat/sobre-nosotros/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://microtools.lat/contacto/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://microtools.lat/legal/aviso-legal/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://microtools.lat/legal/privacidad/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://microtools.lat/legal/cookies/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
