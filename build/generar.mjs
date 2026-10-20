@@ -340,8 +340,8 @@ ${t.filas.map((f) => `          <tr>${f.map((c, i) => (i === 0 ? `<th scope="row
   return h;
 }
 
-function cajaHerramienta(t) {
-  return `  <aside class="cta-herramienta">
+function cajaHerramienta(t, etiqueta) {
+  return `  <aside class="cta-herramienta" aria-label="${esc(etiqueta)}">
     <p>${esc(t.texto)}</p>
     <a class="boton" href="${t.url}" data-herramienta="${esc(t.boton)}">${esc(t.boton)} ${icono('flecha', 18)}</a>
   </aside>`;
@@ -372,7 +372,7 @@ function paginaGuia(g) {
   <article class="articulo">
 ${g.secciones.slice(0, mitad).map(seccionGuia).join('\n')}
   </article>
-${cajaHerramienta(g.herramienta)}
+${cajaHerramienta(g.herramienta, 'Herramienta relacionada')}
   ${huecoAnuncio('mid')}
   <article class="articulo">
 ${g.secciones.slice(mitad).map(seccionGuia).join('\n')}
@@ -384,7 +384,7 @@ ${g.faq.map(([p, r]) => `    <details class="faq__item">
       <p>${esc(r)}</p>
     </details>`).join('\n')}
   </section>
-${cajaHerramienta(g.herramienta)}
+${cajaHerramienta(g.herramienta, 'Herramienta relacionada, al final de la guía')}
   <section class="bloque-guias" aria-labelledby="otras">
     <h2 class="titulo-seccion" id="otras">Otras gu&iacute;as</h2>
 ${listaGuias(otras)}
