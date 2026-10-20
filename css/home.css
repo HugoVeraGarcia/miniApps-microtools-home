@@ -297,6 +297,22 @@ a:hover { color: var(--c-accent-hover); }
 .articulo li { margin-bottom: var(--e2); }
 .articulo li::marker { color: var(--c-accent); }
 
+.codigo {
+  margin: 0 0 var(--e4); padding: var(--e4); overflow-x: auto;
+  background: var(--c-surface-2); border: 1px solid var(--c-border); border-radius: var(--r-control);
+  font: 14px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--c-text);
+}
+
+.tabla-envoltura { margin: 0 0 var(--e5); overflow-x: auto; border: 1px solid var(--c-border); border-radius: var(--r-control); }
+.tabla-envoltura:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+.tabla { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.tabla caption { caption-side: top; text-align: left; padding: var(--e3) var(--e4); font-weight: 600; color: var(--c-text); border-bottom: 1px solid var(--c-border); }
+.tabla th, .tabla td { padding: var(--e2) var(--e4); text-align: left; border-bottom: 1px solid var(--c-border); white-space: nowrap; }
+.tabla thead th { background: var(--c-surface-2); color: var(--c-text); font-weight: 600; }
+.tabla tbody th { font-weight: 600; color: var(--c-text); }
+.tabla td { color: var(--c-text-2); }
+.tabla tbody tr:last-child th, .tabla tbody tr:last-child td { border-bottom: 0; }
+
 .cta-herramienta {
   max-width: 68ch; margin: var(--e6) 0; padding: var(--e5);
   background: var(--c-accent-soft); border: 1px solid var(--c-accent-borde);

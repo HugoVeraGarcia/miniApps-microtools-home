@@ -323,6 +323,19 @@ ${pie()}
 function seccionGuia(sec) {
   let h = `    <h2>${esc(sec.h2)}</h2>\n` + sec.parrafos.map((p) => `    <p>${esc(p)}</p>`).join('\n');
   if (sec.lista) h += `\n    <ul>\n${sec.lista.map((li) => `      <li>${esc(li)}</li>`).join('\n')}\n    </ul>`;
+  if (sec.codigo) h += `\n    <pre class="codigo"><code>${esc(sec.codigo)}</code></pre>`;
+  if (sec.tabla) {
+    const t = sec.tabla;
+    h += `\n    <div class="tabla-envoltura" role="region" aria-label="${esc(t.titulo)}" tabindex="0">
+      <table class="tabla">
+        <caption>${esc(t.titulo)}</caption>
+        <thead><tr>${t.cabecera.map((c) => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead>
+        <tbody>
+${t.filas.map((f) => `          <tr>${f.map((c, i) => (i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(c)}</td>`)).join('')}</tr>`).join('\n')}
+        </tbody>
+      </table>
+    </div>`;
+  }
   if (sec.despues) h += '\n' + sec.despues.map((p) => `    <p>${esc(p)}</p>`).join('\n');
   return h;
 }
@@ -385,12 +398,12 @@ function paginaGuias() {
   const cuerpo = `  ${htmlMigas}
   <div class="entrada">
     <h1>Gu&iacute;as</h1>
-    <p>Explicaciones claras y verificables de los temas que resuelven nuestras herramientas: c&oacute;mo se calculan los beneficios laborales en Per&uacute;, c&oacute;mo hacer que un c&oacute;digo QR funcione bien impreso y c&oacute;mo acertar con la talla al comprar calzado en tallas de Estados Unidos.</p>
+    <p>Explicaciones claras y verificables de los temas que resuelven nuestras herramientas: c&oacute;mo se calculan la CTS, la gratificaci&oacute;n, las vacaciones y la liquidaci&oacute;n en Per&uacute;; c&oacute;mo hacer que un c&oacute;digo QR funcione bien impreso, en una tarjeta o en la mesa de un restaurante; y c&oacute;mo acertar con la talla al comprar calzado en tallas de Estados Unidos.</p>
     <p>Cada gu&iacute;a termina con la herramienta que hace el c&aacute;lculo por ti.</p>
   </div>
 ${listaGuias(guias)}
   ${huecoAnuncio('bottom')}`;
-  return documento({ ruta: '/guias/', titulo: `Guías: CTS, liquidación, códigos QR y tallas | ${MARCA}`,
+  return documento({ ruta: '/guias/', titulo: `Guías: CTS, gratificación, vacaciones, códigos QR y tallas | ${MARCA}`,
     descripcion: 'Guías prácticas sobre CTS y liquidación en Perú, tamaño y usos de los códigos QR y cómo acertar con la talla de zapatillas en tallas de EE. UU.',
     cuerpo, ld: [ldMigas] });
 }
